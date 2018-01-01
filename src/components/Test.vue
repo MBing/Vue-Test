@@ -1,5 +1,6 @@
 <template>
   <div class="test">
+    <input v-model="title"><br>
     <h1>{{ title }}</h1>
     <p>{{ user.firstName }}</p>
     <p v-text="user.lastName"></p>
