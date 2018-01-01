@@ -27,6 +27,8 @@
     <input type="text" v-model="user.lastName">
 
     <h3>{{ fullName }}</h3>
+
+    <h2>{{ message }}</h2>
   </div>
 </template>
 
@@ -34,6 +36,12 @@
 <script>
   export default {
     name: 'Test',
+    props: {
+      message: {
+        type: String,
+        default: 'FooBar',
+      },
+    },
     data() {
       return {
         title: 'Hello World',

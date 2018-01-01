@@ -10,6 +10,9 @@ export default new Router({
       path: '/',
       name: 'TestRoute',
       component: Test,
+      props: {
+        message: 'Hello',
+      },
     },
   ],
 });
