@@ -63,6 +63,12 @@
         this.newUser.email = '';
       },
     },
+    created() {
+      this.$http.get('https://jsonplaceholder.typicode.com/users')
+        .then((response) => {
+          this.users = response.data;
+        });
+    },
   };
 </script>
 
