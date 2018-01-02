@@ -1,6 +1,7 @@
 <template>
   <div class="test">
-    <input v-model="title">
+    <input v-model="title" />
+
     <br />
 
     <h1>{{ title }}</h1>
@@ -17,14 +18,17 @@
 
     <br />
 
-    <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="pressEnter">
+    <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="pressEnter" />
 
-    <hr>
+    <hr />
 
     <label>First Name:</label>
-    <input type="text" v-model="user.firstName">
+    <input type="text" v-model="user.firstName" />
+
+    <br />
+
     <label>Last Name:</label>
-    <input type="text" v-model="user.lastName">
+    <input type="text" v-model="user.lastName" />
 
     <h3>{{ fullName }}</h3>
 
