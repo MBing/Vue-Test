@@ -9,7 +9,13 @@
       <input type="submit" value="Add User" />
     </form>
     <ul>
-      <li v-for="user in users">{{ user.name }} : {{ user.email }}</li>
+      <li v-for="user in users">
+        <input type="checkbox" class="toggle" v-model="user.contacted" />
+        <span :class="{contacted: user.contacted}">
+          {{ user.name }} : {{ user.email }}
+        </span>
+        <button v-on:click="deleteUser(user)">x</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -24,7 +30,7 @@
           {
             name: 'John Doe',
             email: 'jdoe@gmail.com',
-            contacted: false,
+            contacted: true,
           },
           {
             name: 'Steve Smith',
@@ -49,6 +55,9 @@
         });
         this.clearFields();
       },
+      deleteUser: function deleteUser(user) {
+        this.users.splice(this.users.indexOf(user), 1);
+      },
       clearFields: function clear() {
         this.newUser.name = '';
         this.newUser.email = '';
@@ -58,5 +67,7 @@
 </script>
 
 <style scoped>
-
+  .contacted {
+    text-decoration: line-through;
+  }
 </style>
